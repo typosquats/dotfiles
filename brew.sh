@@ -30,6 +30,9 @@ brew install tmux
 brew install tmuxinator
 brew install mr
 brew cask install sublime-text
+brew cask install virtualbox
+brew install docker
+brew cask install docker
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
