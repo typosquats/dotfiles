@@ -23,11 +23,12 @@ brew install gnu-sed --with-default-names
 # running `chsh`.
 brew install bash
 brew install bash-completion2
-brew install zsh
+brew install zsh zsh-completions
 brew cask install spectacle
 brew install tmux
 brew install tmuxinator
 brew install mr
+brew cask install sublime-text
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
