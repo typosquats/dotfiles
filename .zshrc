@@ -32,8 +32,28 @@ alias asgs="aws autoscaling describe-auto-scaling-groups --query 'AutoScalingGro
 alias elbs="aws elb describe-load-balancers --query 'LoadBalancerDescriptions[].LoadBalancerName'"
 alias deploys="aws ec2 describe-tags --filter \"Name=tag-key,Values=Deployment\" --query 'Tags[].Value' | grep '\"' | sed 's/.*\"\(.*"
 
+# antigen
+source ~/.antigen/antigen.zsh
+
+# Load the oh-my-zsh's library.
 antigen use oh-my-zsh
-antigen bundle arialdomartini/oh-my-git
+
+# Bundles from the default repo (robbyrussell's oh-my-zsh).
+antigen bundle git
+antigen bundle rsync
+antigen bundle heroku
+antigen bundle pip
+antigen bundle lein
+antigen bundle python
+antigen bundle history
+antigen bundle command-not-found
+
+# Third Party
+antigen bundle kennethreitz/autoenv
+
+# Syntax highlighting bundle.
+antigen bundle zsh-users/zsh-completions src
+antigen bundle zsh-users/zsh-syntax-highlighting
 antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
 
 
@@ -60,7 +80,7 @@ syspip(){
    PIP_REQUIRE_VIRTUALENV="" pip "$@"
 }
 
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
 alias v='workon'
 alias v.deactivate='deactivate'
 alias v.mk='mkvirtualenv'
