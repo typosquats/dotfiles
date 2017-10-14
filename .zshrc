@@ -5,7 +5,10 @@
 # Some functions taken from various web sites/mailing lists, others written
 # myself.
 #
-# Last updated September 2014
+# Last updated October 2017
+
+git config --global user.email "typosquats@gmail.com"
+git config --global user.name "Typo"
 
 export ZSH=$HOME/.oh-my-zsh
 export CODE=$HOME/code
@@ -28,6 +31,11 @@ alias cfs="aws cloudformation describe-stacks --query 'Stacks[].StackName'"
 alias asgs="aws autoscaling describe-auto-scaling-groups --query 'AutoScalingGroups[].AutoScalingGroupName'"
 alias elbs="aws elb describe-load-balancers --query 'LoadBalancerDescriptions[].LoadBalancerName'"
 alias deploys="aws ec2 describe-tags --filter \"Name=tag-key,Values=Deployment\" --query 'Tags[].Value' | grep '\"' | sed 's/.*\"\(.*"
+
+antigen use oh-my-zsh
+antigen bundle arialdomartini/oh-my-git
+antigen theme arialdomartini/oh-my-git-themes oppa-lana-style
+
 
 # OSX Specific
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx

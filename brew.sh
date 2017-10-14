@@ -21,9 +21,11 @@ brew install gnu-sed --with-default-names
 # Install Bash 4.
 # Note: don’t forget to add `/usr/local/bin/bash` to `/etc/shells` before
 # running `chsh`.
+curl -L git.io/antigen > antigen.zsh
 brew install bash
 brew install bash-completion2
 brew install zsh zsh-completions
+cd ~ && git clone https://github.com/zsh-users/antigen.git .antigen
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 brew cask install spectacle
 brew install tmux
@@ -33,6 +35,18 @@ brew cask install sublime-text
 brew cask install virtualbox
 brew install docker
 brew cask install docker
+
+# Code
+brew install python
+sudo easy_install pip
+sudo pip install --upgrade pip
+
+curl -L https://get.rvm.io | bash -s stable --rails --autolibs=enabled
+
+
+# Finder settings
+defaults write com.apple.finder AppleShowAllFiles YES
+
 
 # Switch to using brew-installed bash as default shell
 if ! fgrep -q '/usr/local/bin/bash' /etc/shells; then
