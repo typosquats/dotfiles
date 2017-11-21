@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+
 # Install command-line tools using Homebrew.
 
 # Make sure we’re using the latest Homebrew.
@@ -35,6 +37,12 @@ brew cask install sublime-text
 brew cask install virtualbox
 brew install docker
 brew cask install docker
+brew cask install spotify
+brew cask install caffeine
+brew cask install tunnelblick
+brew cask install the-unarchiver
+brew install htop
+brew cask install istat-menus
 
 # Code
 brew install python
@@ -116,6 +124,11 @@ brew install ssh-copy-id
 brew install tree
 brew install vbindiff
 brew install zopfli
+brew install htop
 
 # Remove outdated versions from the cellar.
 brew cleanup
+
+# Fonts
+cd; mkdir code; cd code; git clone https://github.com/powerline/fonts.git; cd fonts; ./install.sh; cd
+
